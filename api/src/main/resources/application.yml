@@ -1,0 +1,22 @@
+micronaut:
+  application:
+    name: example
+  server:
+    port: 8089 # give port here for example i have give 8089 as port
+    context-path: /your-context-path # give context path here
+    cors:
+      enabled: true
+r2dbc:
+  datasources:
+    default:
+      # configure below properties according to your requirements
+      url: r2dbc:postgresql://${DB_HOST:`cogo-book.cxmkfxrc30yc.ap-south-1.rds.amazonaws.com`}:${DB_PORT:5432}/${DB_NAME:plutus}
+      dialect: POSTGRES
+      username: ${DB_USER:postgres}
+      password: ${DB_PASSWORD:postgres123}
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
